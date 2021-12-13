@@ -1,5 +1,4 @@
-import leetCode.TopInterviewQuestions.Strings.ValidAnagram;
-import leetCode.TopInterviewQuestions.Strings.ValidPalindrome;
+import leetCode.TopInterviewQuestions.Strings.*;
 
 public class Learning {
     public static void main(String[] args) {
