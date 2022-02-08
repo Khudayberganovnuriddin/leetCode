@@ -17,7 +17,7 @@ public class ShuffleArray {
     }
 
     public int[] shuffle() {
-        int[] shuffleArr = new int[nums.length];
+        int[] shuffleArr;
         shuffleArr = Arrays.copyOf(nums,nums.length);
         Random random = ThreadLocalRandom.current();
         for (int i = nums.length - 1; i > 0; i--) {
