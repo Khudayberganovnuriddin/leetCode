@@ -1,32 +1,48 @@
-import java.time.LocalDateTime;
-import java.time.YearMonth;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class Learning {
-    public static void main(String[] args) {
-        for (CalcDto value : calcDeposit(1, 1000000D, 23f)) {
-            System.out.printf("%s %.2f %.2f\n", value.getDate(), value.getAmount(), value.getInterest());
-        }
+
+    public static Future<String> calculateAsync() {
+        CompletableFuture<String> completableFuture = new CompletableFuture<>();
+
+        Executors.newCachedThreadPool().submit(() -> {
+            Thread.sleep(5000);
+            completableFuture.complete("Hello");
+            return null;
+        });
+        return completableFuture;
     }
 
-    public static List<CalcDto> calcDeposit(Integer duration, Double amount, Float interest) {
-        List<CalcDto> result = new ArrayList<>();
-        LocalDateTime dateTime = LocalDateTime.now();
-        double sum = 0D;
-        for (int i = 0; i < duration; i++) {
-            double interestAmount = amount * interest / 100;
-            int days = YearMonth.of(dateTime.getYear(), dateTime.getMonth()).lengthOfMonth();
-            if (i == 0) days--;
-            interestAmount = interestAmount / 365 * days;
-            sum += interestAmount;
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
+//        Future<String> stringFuture = calculateAsync();
+//        String result = stringFuture.get();
+//        System.out.println(result);
+//        assertEquals("hello", result);
 
-            dateTime = dateTime.plusMonths(1);
-            String date = String.format("%02d.%02d.%d", dateTime.getDayOfMonth(), dateTime.getMonthValue(), dateTime.getYear());
-            CalcDto CalcDto = new CalcDto(date, Math.round(sum*100)/100D, Math.round(interestAmount * 100) / 100D);
+        int[] nums = new int[]{2,3,4,5,3};
+        System.out.println(isDuplicate(nums));
 
-            result.add(CalcDto);
+    }
+
+    public static int isDuplicate(int[] numbers){
+        int tortoise = numbers[0];
+        int hare = numbers[0];
+        while(true){
+            tortoise = numbers[tortoise];
+            hare = numbers[numbers[hare]];
+            if(tortoise == hare)
+                break;
         }
-        return result;
+        int ptr1 = numbers[0];
+        int ptr2 = tortoise;
+
+        while(ptr1 != ptr2){
+            ptr1 = numbers[ptr1];
+            ptr2 = numbers[ptr2];
+        }
+        return ptr1;
     }
 }
