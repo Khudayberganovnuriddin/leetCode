@@ -1,4 +1,4 @@
-package stepik.ternaryPredicate;
+package stepik.ternary_predicate;
 
 @FunctionalInterface
 public interface TernaryIntPredicate {
