@@ -43,9 +43,9 @@ public class SearchSuggestionsSystem {
         }
         return result;
     }
-}
 
-class TrieNode {
-    TrieNode[] children = new TrieNode[26];
-    LinkedList<String> suggestion = new LinkedList<>();
+    private static class TrieNode {
+        TrieNode[] children = new TrieNode[26];
+        LinkedList<String> suggestion = new LinkedList<>();
+    }
 }

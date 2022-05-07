@@ -21,8 +21,8 @@ public class SolutionWix {
 //        SearchSuggestionsSystem searchSuggestionsSystem = new SearchSuggestionsSystem();
 //        System.out.println(searchSuggestionsSystem.suggestedProducts(arr, "mouse"));
 
-        String[] arr = new String[]{"abcd","dcba","lls","s","sssll"};
-        PalindromePairs palindromePairs = new PalindromePairs();
-        System.out.println(palindromePairs.palindromePairs(arr));
+//        String[] arr = new String[]{"abcd","dcba","lls","s","sssll"};
+//        PalindromePairs palindromePairs = new PalindromePairs();
+//        System.out.println(palindromePairs.palindromePairs(arr));
     }
 }
