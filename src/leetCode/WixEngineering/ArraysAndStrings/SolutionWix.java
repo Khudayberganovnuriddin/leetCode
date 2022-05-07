@@ -1,4 +1,4 @@
-package leetCode.wix_engineering;
+package leetCode.WixEngineering.ArraysAndStrings;
 
 public class SolutionWix {
     public static void main(String[] args) {
