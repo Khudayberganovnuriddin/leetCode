@@ -1,6 +1,6 @@
 package leetCode.WixEngineering.ArraysAndStrings;
 
-public class SolutionWix {
+public class Solution {
     public static void main(String[] args) {
 //        String[] arr = new String[]{"b@leetcode.com", "a@leetcode.com", "c@leetcode.com"};
 //        System.out.println(UniqueEmailAdresses.numUniqueEmails(arr));
