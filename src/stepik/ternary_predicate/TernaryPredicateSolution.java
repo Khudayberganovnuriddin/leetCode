@@ -1,4 +1,4 @@
-package stepik.ternaryPredicate;
+package stepik.ternary_predicate;
 
 public class TernaryPredicateSolution {
     public static final TernaryIntPredicate allValuesAreDifferentPredicate = (a,b,c)-> !a.equals(b) && !b.equals(c) && !a.equals(c);
