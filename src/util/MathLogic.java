@@ -1,3 +1,5 @@
+package util;
+
 public class MathLogic {
     public static void main(String[] args) {
         // math logic - - = +, - + = -, + - = -, + + = +

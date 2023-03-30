@@ -1,3 +1,5 @@
+package util;
+
 public class CalcDto {
     private String date;
     private Double amount;
