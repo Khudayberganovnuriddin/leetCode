@@ -1,7 +1,7 @@
 package explore;
 
-
-public class Solution6 {
+// Solution 6
+public class ZigZagConversion {
 
   public static void main(String[] args) {
     // PAYPALISHIRING - PAY -P- ALI -S- HIR -I- NG
