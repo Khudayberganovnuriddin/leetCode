@@ -1,0 +1,29 @@
+{
+    "plugins": [
+        {
+            "type": "add",
+            "pluginName": "fleet.intellij"
+        },
+        {
+            "type": "add",
+            "pluginName": "fleet.json"
+        },
+        {
+            "type": "add",
+            "pluginName": "fleet.java"
+        },
+        {
+            "type": "add",
+            "pluginName": "fleet.maven"
+        },
+        {
+            "type": "add",
+            "pluginName": "fleet.smartMode"
+        },
+        {
+            "type": "add",
+            "pluginName": "fleet.yaml"
+        }
+    ],
+    "editor.guides": []
+}
