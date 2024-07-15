@@ -31,6 +31,7 @@ class C extends B {
 }
 
 public class stepikInterfaceTest {
+
   public static void main(String[] args) {
     A aB = new B();
 //    aB.diff(1,2)

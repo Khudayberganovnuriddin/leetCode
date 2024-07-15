@@ -1,14 +1,15 @@
 package leetcode.top_interview_questions.trees;
 
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 public class ValidateBinarySearchTree {
-
+  
   public boolean isValidBST(TreeNode root) {
-      if (root == null) {
-          return true;
-      }
-    Stack<TreeNode> stack = new Stack<>();
+    if (root == null) {
+      return true;
+    }
+    Deque<TreeNode> stack = new ArrayDeque<>();
     TreeNode pre = null;
     while (root != null || !stack.isEmpty()) {
       while (root != null) {
@@ -16,9 +17,9 @@ public class ValidateBinarySearchTree {
         root = root.left;
       }
       root = stack.pop();
-        if (pre != null && root.val <= pre.val) {
-            return false;
-        }
+      if (pre != null && root.val <= pre.val) {
+        return false;
+      }
       pre = root;
       root = root.right;
     }

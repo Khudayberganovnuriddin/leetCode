@@ -3,16 +3,26 @@ package leetcode.top_interview_questions.array;
 import java.util.Arrays;
 
 public class IntersectionsOfTwoArrays {
+
+  private static final String NO_INTERSECTION = "false";
+
   public static void main(String[] args) {
 //    System.out.println(findIntersection(new String[] {"1, 3, 9, 10, 17, 18", "1, 4, 9, 10"}));
-    System.out.println(findIntersection(new String[] {"1, 3, 9, 10, 17, 18", "1, 4, 9, 10"}));
+    System.out.println(findIntersection(new String[]{"1, 3, 9, 10, 17, 18", "1, 4, 9, 10"}));
+  }
+
+  private static int[] convertStringToArray(String str) {
+    return Arrays.stream(str.split(","))
+        .map(String::trim)
+        .mapToInt(Integer::parseInt)
+        .toArray();
   }
 
   public static String findIntersection(String[] strArr) {
-    int[] firstArr = Arrays.stream(strArr[0].split(",")).map(String::trim).mapToInt(Integer::parseInt).toArray();
-    int[] secArr = Arrays.stream(strArr[1].split(",")).map(String::trim).mapToInt(Integer::parseInt).toArray();
+    int[] firstArr = convertStringToArray(strArr[0]);
+    int[] secArr = convertStringToArray(strArr[1]);
     int[] res = intersect(firstArr, secArr);
-    return res.length == 0 ? "false" : Arrays.toString(res);
+    return res.length == 0 ? NO_INTERSECTION : Arrays.toString(res);
   }
 
   public static int[] intersect(int[] nums1, int[] nums2) {

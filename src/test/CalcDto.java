@@ -1,37 +1,38 @@
 package test;
 
 public class CalcDto {
-    private String date;
-    private Double amount;
-    private Double interest;
 
-    public CalcDto(String date, Double amount, Double interest) {
-        this.date = date;
-        this.amount = amount;
-        this.interest = interest;
-    }
+  private String date;
+  private Double amount;
+  private Double interest;
 
-    public String getDate() {
-        return date;
-    }
+  public CalcDto(String date, Double amount, Double interest) {
+    this.date = date;
+    this.amount = amount;
+    this.interest = interest;
+  }
 
-    public void setDate(String date) {
-        this.date = date;
-    }
+  public String getDate() {
+    return date;
+  }
 
-    public Double getAmount() {
-        return amount;
-    }
+  public void setDate(String date) {
+    this.date = date;
+  }
 
-    public void setAmount(Double amount) {
-        this.amount = amount;
-    }
+  public Double getAmount() {
+    return amount;
+  }
 
-    public Double getInterest() {
-        return interest;
-    }
+  public void setAmount(Double amount) {
+    this.amount = amount;
+  }
 
-    public void setInterest(Double interest) {
-        this.interest = interest;
-    }
+  public Double getInterest() {
+    return interest;
+  }
+
+  public void setInterest(Double interest) {
+    this.interest = interest;
+  }
 }

@@ -1,41 +1,45 @@
 package explore;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Solution438 {
+
+  private static final int ALPHABET_SIZE = 26;
 
   public static void main(String[] args) {
     System.out.println(findAnagrams("abab", "ab"));
   }
 
-  public static List<Integer> findAnagrams(String s, String p) {
-    List<Integer> res = new ArrayList<>();
-    if (p.length() > s.length()) return res;
-
-    int[] ars = new int[26];
-    int[] arp = new int[26];
-
-    for (int i = 0; i < p.length(); i++) {
-      ars[s.charAt(i) - 'a']++;
-      arp[p.charAt(i) - 'a']++;
+  public static List<Integer> findAnagrams(String inputString, String pattern) {
+    List<Integer> result = new ArrayList<>();
+    if (pattern.length() > inputString.length()) {
+      return result;
     }
-    for (int i = 0; i <= s.length() - p.length(); i++) {
-      if (iszero(ars, arp)) {
-        res.add(i);
+
+    int[] freqInputString = new int[ALPHABET_SIZE];
+    int[] freqPattern = new int[ALPHABET_SIZE];
+
+    for (int i = 0; i < pattern.length(); i++) {
+      freqInputString[inputString.charAt(i) - 'a']++;
+      freqPattern[pattern.charAt(i) - 'a']++;
+    }
+
+    for (int i = 0; i <= inputString.length() - pattern.length(); i++) {
+      if (isEqualFrequencies(freqInputString, freqPattern)) {
+        result.add(i);
       }
-      ars[s.charAt(i) - 'a']--;
-      if (i + p.length() < s.length()) {
-        ars[s.charAt(i + p.length()) - 'a']++;
+      freqInputString[inputString.charAt(i) - 'a']--;
+      if (i + pattern.length() < inputString.length()) {
+        freqInputString[inputString.charAt(i + pattern.length()) - 'a']++;
       }
     }
-    return res;
+    return result;
   }
 
-  public static boolean iszero(int[] arrs, int[] arrp) {
-    for (int j = 0; j < 26; j++) {
-      if (arrs[j] != arrp[j]) {
+  public static boolean isEqualFrequencies(int[] arrS, int[] arrP) {
+    for (int j = 0; j < ALPHABET_SIZE; j++) {
+      if (arrS[j] != arrP[j]) {
         return false;
       }
     }

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class generateParentheses {
+
   public static List<String> generateParenthesis(int n) {
 
     ArrayList<String> result = new ArrayList<>();
@@ -14,7 +15,7 @@ public class generateParentheses {
   }
 
   public static void generate(int n, int left, int right, List<String> result,
-                              StringBuilder sb) {
+      StringBuilder sb) {
 
     if (left < right) {
       return;
