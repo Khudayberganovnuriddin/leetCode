@@ -1,6 +1,7 @@
 package explore;
 
 public class Solution6 {
+
   public static void main(String[] args) {
     // PAYPALISHIRING - PAY -P- ALI -S- HIR -I- NG
     // PAHNAPLSIIGYIR
@@ -8,7 +9,9 @@ public class Solution6 {
   }
 
   public static String convert(String s, int numRows) {
-    if (numRows == 1) return s;
+    if (numRows == 1) {
+      return s;
+    }
 
     StringBuilder answer = new StringBuilder();
     int n = s.length();
