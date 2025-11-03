@@ -1,13 +1,13 @@
 package interfaces;
 
-public class MyclassUtil<T> {
+public class ClassUtil<T> {
     private T val;
 
-    MyclassUtil(T v) {
+    ClassUtil(T v) {
         val = v;
     }
 
-    MyclassUtil() {
+    ClassUtil() {
         val = null;
     }
 

@@ -7,10 +7,10 @@ public class DuplicateRemover {
       return 0;
     }
     int distinctCount = 0;
-    for (int currentIndex = 0; currentIndex < elements.length; currentIndex++) {
-      if (elements[distinctCount] != elements[currentIndex]) {
+    for (int i = 0; i < elements.length; i++) {
+      if (elements[distinctCount] != elements[i]) {
         distinctCount++;
-        elements[distinctCount] = elements[currentIndex];
+        elements[distinctCount] = elements[i];
       }
     }
     return distinctCount + 1;
