@@ -1,24 +1,26 @@
 package test;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
+import java.util.function.IntSupplier;
+import java.util.stream.IntStream;
 
 public class Test {
 
   public static void main(String[] args) {
-    try {
-      badMethod();
-      System.out.print("A");
-    } catch (RuntimeException ex) {
-      System.out.print("B");
-    } catch (Exception ex1) {
-      System.out.print("C");
-    } finally {
-      System.out.print("D");
-    }
-    System.out.print("E");
+    IntSupplier fib = new IntSupplier() {
+      int previous = 0;
+      int current = 1;
+      @Override
+      public int getAsInt() {
+        int oldPrevious = this.previous;
+        int newValue = this.previous + this.current;
+        this.previous = this.current;
+        this.current = newValue;
+        return oldPrevious;
+      }
+    };
+
+    IntStream.generate(fib).limit(10).forEach(System.out::println);
+
 //    List<Integer> qwe = new ArrayList<>();
 //    qwe.addAll(List.of(1,2,3,4));
 //    Iterator<Integer> iterator = qwe.iterator();
