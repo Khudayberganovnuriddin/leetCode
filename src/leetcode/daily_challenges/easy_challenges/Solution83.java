@@ -2,7 +2,7 @@ package leetcode.daily_challenges.easy_challenges;
 
 import leetcode.top_interview_questions.linked_list.ListNode;
 
-public class RemoveDuplicatesFromSortedList {
+public class Solution83 {
 
   public static ListNode deleteDuplicates(ListNode head) {
       if (head == null || head.next == null) {
